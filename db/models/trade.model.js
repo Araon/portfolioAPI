@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const tradeSchema = new mongoose.Schema({
+  userName: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Portfolio'
+  },
   stock: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Stock',
@@ -21,6 +25,10 @@ const tradeSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
+    required: true
+  },
+  transactionId: {
+    type: String,
     required: true
   }
 });
