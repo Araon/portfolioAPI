@@ -3,7 +3,6 @@ const router = express.Router();
 
 const tradeController = require('../../controllers/tradeController');
 
-// Get all short URLs
 router.post("/addTrade", tradeController.addTrade);
 
 router.post("/updateTrade", tradeController.updateTrade);
