@@ -5,5 +5,3 @@ router.use("/", require("./trade"));
 
 
 module.exports = router;
-
-
