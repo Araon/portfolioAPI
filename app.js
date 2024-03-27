@@ -3,6 +3,7 @@ require("dotenv").config({ path: "./.env" });
 
 const express = require('express');
 const cors = require("cors");
+const rateLimit = require('express-rate-limit');
 
 const urlRouter = require('./routes')
 const requestLogger = require('./middleware/requestLogger');
@@ -14,8 +15,14 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 const app = express();
 
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, 
+  max: 100,
+  message: 'Too many requests from this IP address',
+});
 
 // middlewares
+app.use(limiter);
 app.use(cors());
 app.use(requestLogger);
 app.use(errorHandler)
