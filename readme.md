@@ -47,7 +47,7 @@ Desinge doc for the api can be found here
 | `/updateTrade` | POST | Updates an existing trade in the portfolio | Trade object | Confirmation message |
 | `/removeTrade` | POST | Removes an existing trade from the portfolio | Trade object | Confirmation message |
 
-Design doc for the api can be found [here](docs/DesignDoc.md)
+Design doc for the api can be found [here](docs/apiDocs.md)
 
 Here are some example requests and responses using curl for the endpoints in the provided [Postman collection](docs/portfolioAPI.postman_collection.json):
 
