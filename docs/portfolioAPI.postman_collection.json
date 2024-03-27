@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "f9a9705f-ca8c-4e90-8fcf-12f69dac0533",
+		"name": "portfolioAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12868701"
+	},
+	"item": [
+		{
+			"name": "/addTrade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stockId\":\"GOOGL\",\n    \"type\":\"buy\",\n    \"quantity\":1,\n    \"price\":50,\n    \"date\": \"2024-03-27\",\n    \"username\": \"John Doe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/portfolio/addTrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio",
+						"addTrade"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/addTrade",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"stockId\":\"GOOGL\",\n    \"type\":\"buy\",\n    \"quantity\":1,\n    \"price\":50,\n    \"date\": \"2024-03-27\",\n    \"username\": \"John Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/portfolio/addTrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio",
+								"addTrade"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"type": "text"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80",
+							"type": "text"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"50-HlE2fIyGr8kb50SLEVyNDCdvISQ\"",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Mar 2024 17:07:41 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"transactionId\": \"1ea0a23b-675f-4a94-89a8-0c4dbf1889c6\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/portfolio",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/portfolio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/portfolio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"type": "text"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1570",
+							"type": "text"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"622-gYpaw00oG3r1ITT0dX2C5lhVFgI\"",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Mar 2024 17:09:16 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"type": "text"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"username\": \"John Doe\",\n            \"stocks\": [\n                {\n                    \"id\": \"GOOGL\",\n                    \"name\": \"Alphabet Inc.\",\n                    \"trades\": [\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 2,\n                            \"price\": 50\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 50\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"FB\",\n                    \"name\": \"Facebook, Inc\",\n                    \"trades\": [\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"sell\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 5,\n                            \"price\": 20\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"HDFCBANK\",\n                    \"name\": \"HDFCBANK, Inc\",\n                    \"trades\": [\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        },\n                        {\n                            \"date\": \"2024-03-27T00:00:00.000Z\",\n                            \"type\": \"buy\",\n                            \"quantity\": 1,\n                            \"price\": 100\n                        }\n                    ]\n                }\n            ],\n            \"portfolioDetails\": {\n                \"total_stocks\": 3\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/holdings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/portfolio/holdings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio",
+						"holdings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/updateTrade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactionId\":\"1ea0a23b-675f-4a94-89a8-0c4dbf1889c6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/portfolio/removeTrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio",
+						"removeTrade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/removeTrade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactionId\":\"0ff25233-15d3-4544-a0af-ef347d066ef6\",\n    \"quantity\":1,\n    \"price\":50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/portfolio/removeTrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio",
+						"removeTrade"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
